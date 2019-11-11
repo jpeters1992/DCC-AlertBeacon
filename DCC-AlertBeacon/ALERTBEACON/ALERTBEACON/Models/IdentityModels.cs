@@ -20,9 +20,13 @@ namespace ALERTBEACON.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<Observer> Observers { get; set; }
+        public DbSet<CarOwner> CarOwners { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
+
         }
 
         public static ApplicationDbContext Create()
