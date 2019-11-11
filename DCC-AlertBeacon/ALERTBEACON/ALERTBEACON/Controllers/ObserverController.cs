@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ALERTBEACON.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -22,7 +23,7 @@ namespace ALERTBEACON.Controllers
         // GET: Observer/Details/5
         public ActionResult Details(int id)
         {
-            Observer observer = db.Observers.Where(c => c.ID == Id).FirstOrDefault();
+            Observer observer = db.Observers.Where(c => c.Id == id).FirstOrDefault();
             return View(observer);
         }
         // GET: Observer/Create
@@ -50,7 +51,7 @@ namespace ALERTBEACON.Controllers
         // GET: Observer/Edit/5
         public ActionResult Edit(int id)
         {
-            Observer observer = db.Observers.Where(c => c.ID == id).FirstOrDefault();
+            Observer observer = db.Observers.Where(c => c.Id == id).FirstOrDefault();
             return View(observer);
         }
         // POST: Observer/Edit/5
@@ -60,7 +61,7 @@ namespace ALERTBEACON.Controllers
             try
             {
                 // TODO: Add update logic here
-                Observer dbobserver = db.Observers.Where(c => c.ID == id).FirstOrDefault();
+                Observer dbobserver = db.Observers.Where(c => c.Id == id).FirstOrDefault();
                 dbobserver.LicensePlate = observer.LicensePlate;
                 dbobserver.Email = observer.Email;
                 dbobserver.PhoneNumber = observer.PhoneNumber;
@@ -76,7 +77,7 @@ namespace ALERTBEACON.Controllers
         // GET: Observer/Delete/5
         public ActionResult Delete(int id)
         {
-            Observer observer = db.Observers.Where(c => c.ID == id).FirstOrDefault();
+            Observer observer = db.Observers.Where(c => c.Id == id).FirstOrDefault();
             return View(observer);
         }
         // POST: Observer/Delete/5
@@ -85,7 +86,7 @@ namespace ALERTBEACON.Controllers
         {
             try
             {
-                observer = db.Observers.Where(c => c.ID == id).FirstOrDefault();
+                observer = db.Observers.Where(c => c.Id == id).FirstOrDefault();
                 db.Observers.Remove(observer);
                 db.SaveChanges();
                 // TODO: Add delete logic here
