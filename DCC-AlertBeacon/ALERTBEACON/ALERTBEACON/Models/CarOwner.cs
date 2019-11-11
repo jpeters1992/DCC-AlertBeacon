@@ -12,7 +12,7 @@ namespace ALERTBEACON.Models
         public int Id { get; set; }
 
         [Display(Name = "License Plate")]
-        public string licensePlate { get; set; }
+        public string LicensePlate { get; set; }
         
         [Display(Name = "First Name")]
         public string FirstName { get; set; }
