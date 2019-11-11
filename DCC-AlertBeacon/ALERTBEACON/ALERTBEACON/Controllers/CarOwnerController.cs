@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ALERTBEACON.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -22,7 +23,7 @@ namespace ALERTBEACON.Controllers
         // GET: CarOwner/Details/5
         public ActionResult Details(int id)
         {
-            CarOwner carOwner = db.CarOwners.Where(c => c.ID == Id).FirstOrDefault();
+            CarOwner carOwner = db.CarOwners.Where(c => c.Id == id).FirstOrDefault();
             return View(carOwner);
         }
         // GET: CarOwner/Create
@@ -50,7 +51,7 @@ namespace ALERTBEACON.Controllers
         // GET: CarOwner/Edit/5
         public ActionResult Edit(int id)
         {
-            CarOwner carOwner = db.CarOwners.Where(c => c.ID == id).FirstOrDefault();
+            CarOwner carOwner = db.CarOwners.Where(c => c.Id == id).FirstOrDefault();
             return View(carOwner);
         }
         // POST: CarOwner/Edit/5
@@ -60,8 +61,8 @@ namespace ALERTBEACON.Controllers
             try
             {
                 // TODO: Add update logic here
-                CarOwner dbcarowner = db.CarOwners.Where(c => c.ID == Id).FirstOrDefault();
-                dbcarowner.licensePlate = carOwner.licensePlate;
+                CarOwner dbcarowner = db.CarOwners.Where(c => c.Id == id).FirstOrDefault();
+                dbcarowner.LicensePlate = carOwner.LicensePlate;
                 dbcarowner.FirstName = carOwner.FirstName;
                 dbcarowner.LastName = carOwner.LastName;
                 dbcarowner.StreetAddress = carOwner.StreetAddress;
@@ -80,7 +81,7 @@ namespace ALERTBEACON.Controllers
         // GET: CarOwner/Delete/5
         public ActionResult Delete(int id)
         {
-            CarOwner carOwner = db.CarOwners.Where(c => c.ID == Id).FirstOrDefault();
+            CarOwner carOwner = db.CarOwners.Where(c => c.Id == id).FirstOrDefault();
             return View(carOwner);
         }
         // POST: CarOwner/Delete/5
@@ -90,14 +91,14 @@ namespace ALERTBEACON.Controllers
             try
             {
                 // TODO: Add delete logic here
-                carOwner = db.CarOwners.Where(c => c.ID == Id).FirstOrDefault();
+                carOwner = db.CarOwners.Where(c => c.Id == id).FirstOrDefault();
                 db.CarOwners.Remove(carOwner);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
             catch
             {
-                return View(Id);
+                return View(id);
             }
         }
     }

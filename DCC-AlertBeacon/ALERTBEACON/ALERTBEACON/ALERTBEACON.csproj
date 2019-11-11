@@ -256,6 +256,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
+
     <Content Include="Views\Observer\Create.cshtml" />
     <Content Include="Views\Observer\Edit.cshtml" />
     <Content Include="Views\Observer\Details.cshtml" />
@@ -263,6 +264,15 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\CarOwner\" />
+
+    <Content Include="Views\CarOwner\Create.cshtml" />
+    <Content Include="Views\CarOwner\Edit.cshtml" />
+    <Content Include="Views\CarOwner\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\Observer\" />
+
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
