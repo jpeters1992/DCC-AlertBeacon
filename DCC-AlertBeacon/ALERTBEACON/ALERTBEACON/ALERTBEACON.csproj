@@ -182,9 +182,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201911112044324_IntialMigration.cs" />
-    <Compile Include="Migrations\201911112044324_IntialMigration.Designer.cs">
-      <DependentUpon>201911112044324_IntialMigration.cs</DependentUpon>
+    <Compile Include="Migrations\201911112155232_intialmigration.cs" />
+    <Compile Include="Migrations\201911112155232_intialmigration.Designer.cs">
+      <DependentUpon>201911112155232_intialmigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -262,7 +262,9 @@
     <Content Include="Views\CarOwner\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\App_LocalResources\" />
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\Observer\" />
+
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -278,8 +280,11 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201911112044324_IntialMigration.resx">
-      <DependentUpon>201911112044324_IntialMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201911111508415_InitialCreate.resx">
+      <DependentUpon>201911111508415_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911111526291_InitialMigration.resx">
+      <DependentUpon>201911111526291_InitialMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
