@@ -22,5 +22,24 @@ namespace ALERTBEACON.Models
 
         [Display(Name = "Reward")]
         public string Reward { get; set; }
+
+       
+
+        [Display(Name = "Car Issues")]
+        public CarIssues Issue { get; set; }
+
+        public enum CarIssues
+        {
+            interiorLights,
+            exteriorLights,
+            flatTire,
+        }
+
+
+
+
+
     }
+    
+
 }
