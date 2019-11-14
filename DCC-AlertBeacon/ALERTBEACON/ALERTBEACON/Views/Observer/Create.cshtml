@@ -25,23 +25,12 @@
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.Issue, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.Label("car issues", new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
             @*@Html.DropDownList("Name")*@
-            @Html.DropDownList("", SelectList)ViewBag.Issues, "Choose Issue")
-           
-            
-            
-
+            @Html.DropDownList("CarIssue", (SelectList)ViewBag.Issue, "--select issue--");
         </div>
     </div>
-
-
-
-
-
-
-
 
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">

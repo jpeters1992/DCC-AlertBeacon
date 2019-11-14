@@ -29,8 +29,9 @@ namespace ALERTBEACON.Controllers
         // GET: Observer/Create
         public ActionResult Create()
         {
-            Observer observer = new Observer();
-            return View(observer);
+            var issues = GetAllIssues();
+            ViewBag.Issue = new SelectList(issues);
+            return View();
         }
         // POST: Observer/Create
         [HttpPost]
@@ -98,6 +99,16 @@ namespace ALERTBEACON.Controllers
             }
 
             
+        }
+
+        public IEnumerable<string> GetAllIssues()
+        {
+            return new List<string>
+            {
+                "Exterior Lights",
+                "Interior Lights",
+                "Flat Tires"
+            };
         }
         
 

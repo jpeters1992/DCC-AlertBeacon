@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace ALERTBEACON.Models
 {
@@ -24,20 +25,10 @@ namespace ALERTBEACON.Models
         public string Reward { get; set; }
 
        
-
         [Display(Name = "Car Issues")]
-        public CarIssues Issue { get; set; }
+        public string CarIssue { get; set; }
 
-        public enum CarIssues
-        {
-            interiorLights,
-            exteriorLights,
-            flatTire,
-        }
-
-
-
-
+        public IEnumerable<SelectListItem> Issues { get; set; }
 
     }
     

@@ -28,7 +28,7 @@ namespace ALERTBEACON.Controllers
             var message = MessageResource.Create(
                 to: to,
                 from: from,
-                body: "");
+                body: "Sample SMS - this is where we input the SMS body message");
             return Content(message.Sid);
         }
 
