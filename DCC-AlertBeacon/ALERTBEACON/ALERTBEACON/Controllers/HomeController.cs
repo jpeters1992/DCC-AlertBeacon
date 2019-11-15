@@ -15,14 +15,14 @@ namespace ALERTBEACON.Controllers
 
         public ActionResult Alerts()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "your allerts page";
 
             return View();
         }
 
         public ActionResult Rewards()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Your rewards page.";
 
             return View();
         }

@@ -7,13 +7,13 @@ namespace ALERTBEACON.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class AddPropertyMigration : IMigrationMetadata
+    public sealed partial class migration1 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddPropertyMigration));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(migration1));
         
         string IMigrationMetadata.Id
         {
-            get { return "201911141448449_AddPropertyMigration"; }
+            get { return "201911142022333_migration1"; }
         }
         
         string IMigrationMetadata.Source
