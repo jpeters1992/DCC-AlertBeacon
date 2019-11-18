@@ -22,9 +22,9 @@ namespace ALERTBEACON.Controllers
             context = new ApplicationDbContext();
         }
 
-        public ActionResult SendSms(Observer observer)
+        public ActionResult SendSms(Observer observer, CarOwner carOwner)
         {
-            if (observer.LicensePlate == observer.LicensePlate) //logic for db query resulting in a license plate # match - still need to update
+            if (observer.LicensePlate == carOwner.LicensePlate)
             {
                 var accountSid = APIKEY.accountSid;
                 var authToken = APIKEY.authToken;

@@ -220,6 +220,8 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\alertPicture.jpg" />
+    <Content Include="Content\bootstrap-cyborg.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -282,6 +284,7 @@
     <Content Include="Views\Observer\Details.cshtml" />
     <Content Include="Views\Observer\Index.cshtml" />
     <Content Include="Views\CarOwner\Index.cshtml" />
+    <Content Include="Views\Observer\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\CarOwner\Create.cshtml" />
