@@ -20,6 +20,7 @@ namespace ALERTBEACON.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+      
         public DbSet<Observer> Observers { get; set; }
         public DbSet<CarOwner> CarOwners { get; set; }
 

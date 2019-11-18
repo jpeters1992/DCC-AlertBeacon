@@ -7,7 +7,7 @@
 <h2>Details</h2>
 
 <div>
-    <h4>CarOwner</h4>
+    <h4>Car Owner</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -84,7 +84,89 @@
 
     </dl>
 </div>
+<div id="floating-panel">
+    <button onclick="toggleHeatmap()">Toggle Crime Map</button>
+    <button onclick="changeGradient()">Change gradient</button>
+    <button onclick="changeRadius()">Change radius</button>
+    <button onclick="changeOpacity()">Change opacity</button>
+
+
+    <div id="map" style="height: 400px; width: 700px; "></div>
+
+
+</div>
+
+
+
+<script>
+    var map, heatmap;
+
+    function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 16,
+            center: { lat: 43.0341379, lng: -87.9141419 },
+            mapTypeId: 'satellite'
+        });
+
+        heatmap = new google.maps.visualization.HeatmapLayer({
+            data: getPoints(),
+            map: map
+        });
+    }
+
+    function toggleHeatmap() {
+        heatmap.setMap(heatmap.getMap() ? null : map);
+    }
+
+    function changeGradient() {
+        var gradient = [
+            'rgba(0, 255, 255, 0)',
+            'rgba(0, 255, 255, 1)',
+            'rgba(0, 191, 255, 1)',
+            'rgba(0, 127, 255, 1)',
+            'rgba(0, 63, 255, 1)',
+            'rgba(0, 0, 255, 1)',
+            'rgba(0, 0, 223, 1)',
+            'rgba(0, 0, 191, 1)',
+            'rgba(0, 0, 159, 1)',
+            'rgba(0, 0, 127, 1)',
+            'rgba(63, 0, 91, 1)',
+            'rgba(127, 0, 63, 1)',
+            'rgba(191, 0, 31, 1)',
+            'rgba(255, 0, 0, 1)'
+        ]
+        heatmap.set('gradient', heatmap.get('gradient') ? null : gradient);
+    }
+
+    function changeRadius() {
+        heatmap.set('radius', heatmap.get('radius') ? null : 20);
+    }
+
+    function changeOpacity() {
+        heatmap.set('opacity', heatmap.get('opacity') ? null : 0.2);
+    }
+
+    // Heatmap data: 500 Points
+    function getPoints() {
+        return [
+            new google.maps.LatLng(43.0338517, -87.9098125),
+            new google.maps.LatLng(43.0343064, -87.9102525),
+            new google.maps.LatLng(43.0345421, -87.9114929),
+            new google.maps.LatLng(43.038908, -87.9147163),
+            new google.maps.LatLng(43.0388966, -87.9147163),
+            new google.maps.LatLng(43.0370245, -87.9063688),
+            new google.maps.LatLng(43.0345589, -87.9052912),
+            new google.maps.LatLng(43.0354538, -87.9112331),
+            new google.maps.LatLng(43.0300075, -87.9098935),
+            new google.maps.LatLng(43.0276153, -87.9132894)
+        ];
+    }
+</script>
+@*<script defer*@
+<script async defer src="@ViewBag.Keys"></script>
+@*</script>*@
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
+

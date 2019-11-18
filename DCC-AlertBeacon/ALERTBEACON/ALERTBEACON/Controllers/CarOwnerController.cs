@@ -24,6 +24,10 @@ namespace ALERTBEACON.Controllers
         public ActionResult Details(int id)
         {
             CarOwner carOwner = db.CarOwners.Where(c => c.Id == id).FirstOrDefault();
+            var apiUrl = $"https://maps.googleapis.com/maps/api/js?key="
+            + Keys.GOOGLE_API_KEY;
+            apiUrl += "&libraries=visualization&callback=initMap";
+            ViewBag.Keys = apiUrl;
             return View(carOwner);
         }
         // GET: CarOwner/Create
